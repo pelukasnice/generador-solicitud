@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar PDF</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Crear Archivos PDF</h1>
+    <br>
+    <form>
+        <label for="nombreCadaver">Nombre del cadáver:</label>
+        <input type="text" id="nombreCadaver" required><br>
+    
+        <label for="legajo">Legajo:</label>
+        <input type="text" id="legajo" required><br>
+    
+        <label for="peritoMedico">Perito Médico:</label>
+        <input type="text" id="peritoMedico" required><br>
+    
+        <label for="nombreCocheria">Nombre de la cochería:</label>
+        <input type="text" id="nombreCocheria" required><br>
+    
+        <label for="vehiculo">Vehículo:</label>
+        <input type="text" id="vehiculo" required><br>
+    
+        <label for="patenteTransporte">Patente de transporte:</label>
+        <input type="text" id="patenteTransporte" required><br>
+    
+        <label for="nombrePersonaRetira">Nombre de la persona que retira:</label>
+        <input type="text" id="nombrePersonaRetira" required><br>
+    
+        <label for="cementerio">Cementerio:</label>
+        <input type="text" id="cementerio" required><br>
+    
+        <button type="button" onclick="generarPDF()">Generar PDF</button>
+      </form>
+    
+      <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="jspdf.min.js"></script>
+</body>
+</html>
