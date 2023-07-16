@@ -9,37 +9,63 @@
 
 </head>
 <body>
-    <h1>Crear Archivos PDF</h1>
-    <br>
-    <form>
-        <label for="nombreCadaver">Nombre del cadáver:</label>
-        <input type="text" id="nombreCadaver" required><br>
-    
+    <div class="container">
+      <h1>Crear Archivos PDF</h1>
+      <br>
+      <form class="form">
         <label for="legajo">Legajo:</label>
         <input type="text" id="legajo" required><br>
-    
-        <label for="peritoMedico">Perito Médico:</label>
-        <input type="text" id="peritoMedico" required><br>
-    
+  
+        <label for="expediente">Expediente:</label>
+        <input type="text" id="expediente" required><br>
+  
+        <label for="oficinaFiscal">Oficina Fiscal:</label>
+        <input type="text" id="oficinaFiscal" required><br>  
+          
+        <label for="hora">Hora:</label>
+        <input type="text" id="hora" required><br>
+  
+        <label for="nombreSolicitante">Nombre del solicitante:</label>
+        <input type="text" id="nombreSolicitante" required><br>
+  
+        <label for="dniTipo">Tipo de documento:</label>
+        <select id="dniTipo" required>
+          <option value="DNI">DNI</option>
+          <option value="RUN">RUN</option>
+          <option value="CEDULA">CEDULA</option>
+          <option value="PASAPORTE">PASAPORTE</option>
+        </select><br>
+  
+        <label for="dni">Número de documento:</label>
+        <input type="text" id="dni" required><br>
+  
+        <label for="domicilio">Domicilio:</label>
+        <input type="text" id="domicilio" required><br>
+  
+        <label for="parentesco">Parentesco:</label>
+        <input type="text" id="parentesco" required><br>
+  
+        <label for="nombreCadaver">Nombre del cadáver:</label>
+        <input type="text" id="nombreCadaver" required><br>
+  
+        <label for="nombreCrematorio">Nombre del crematorio:</label>
+        <input type="text" id="nombreCrematorio" required><br>
+  
+        <label for="provincia">Provincia:</label>
+        <input type="text" id="provincia" required><br>
+  
+        <label for="perito">Perito:</label>
+        <input type="text" id="perito" required><br>
+  
         <label for="nombreCocheria">Nombre de la cochería:</label>
         <input type="text" id="nombreCocheria" required><br>
-    
-        <label for="vehiculo">Vehículo:</label>
-        <input type="text" id="vehiculo" required><br>
-    
-        <label for="patenteTransporte">Patente de transporte:</label>
-        <input type="text" id="patenteTransporte" required><br>
-    
-        <label for="nombrePersonaRetira">Nombre de la persona que retira:</label>
-        <input type="text" id="nombrePersonaRetira" required><br>
-    
-        <label for="cementerio">Cementerio:</label>
-        <input type="text" id="cementerio" required><br>
-    
+  
         <button type="button" onclick="generarPDF()">Generar PDF</button>
       </form>
-    
-      <script type="text/javascript" src="app.js"></script>
+    </div>
+  
+    <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="jspdf.min.js"></script>
-</body>
-</html>
+  </body>
+  </html>
+
