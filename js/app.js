@@ -121,7 +121,7 @@ const generarPDF = (
 
   // Cargar la imagen
  const logoImg = new Image();
- logoImg.src = 'logo ministeriopublico.png'; 
+ logoImg.src = 'img/logo ministeriopublico.png'; 
 
  // Esperar a que se cargue la imagen
  logoImg.onload = function() {
