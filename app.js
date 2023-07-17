@@ -17,6 +17,10 @@ const generarPDF = () => {
   var dia = fechaActual.getDate();
   var mes = fechaActual.toLocaleString('default', { month: 'long' });
   var año = fechaActual.getFullYear();
+  
+  const horaActual = fechaActual.getHours();
+  const minutosActual = fechaActual.getMinutes();
+
 
   var fechaEscrita = " el día " + dia + " de " + mes + " del  año " + año;
 
@@ -31,26 +35,32 @@ const generarPDF = () => {
   const margenInferior = doc.internal.pageSize.height - 10; // Margen inferior
 
   const contenido = `
-    LEGAJO N° L-${legajo}
-    EXPTE. N° ${expediente}
-    TRIBUNAL ${oficinaFiscal}
+    LEGAJO N°: L-${legajo}
+    EXPTE. N°: ${expediente}
+    TRIBUNAL: ${oficinaFiscal}
 
-    En Mendoza,${fechaEscrita} a las 22:10 hs, se presenta el/la señor/ra ${nombreSolicitante} con documento ${dniTipo} N° ${dni} domiciliado en ${domicilio}, en su carácter de ${parentesco} a los fines de informar a Ud. mi intención de proceder a la cremación del cadáver de ${nombreCadaver} legajo N° ${legajo} en el crematorio ${nombreCrematorio} de la provincia de Mendoza.
-    Certificado firmado por el Dr/a. ${perito}. 
-    El perito refiere que no necesita el cadáver para estudios posteriores.
-    El traslado lo efectuará la cochería ${nombreCocheria}.
-    
-    FIRMA
-    
-    ACLARACIÓN                                         FIRMA PERITO
-    
-    DNI
-    
-    SELLO INSTITUCIÓN`;
+                                    ACTA SOLICITUD DE CREMACION
 
-  const lines = doc.splitTextToSize(contenido, margenDerecho - 20); // Restar espacio para margen izquierdo
+    En Mendoza,${fechaEscrita} a las ${horaActual}:${minutosActual} hs, se presenta el/la señor/ra ${nombreSolicitante} con documento ${dniTipo} N° ${dni} domiciliado en ${domicilio}, en su carácter de ${parentesco} a los fines de informar a Ud. mi intención de proceder a la cremación del cadáver de ${nombreCadaver} legajo N° ${legajo} en el crematorio ${nombreCrematorio} de la provincia de Mendoza. Certificado firmado por el Dr/a. ${perito}. El perito refiere que no necesita el cadáver para estudios posteriores.  El traslado lo efectuará la cochería ${nombreCocheria}.
+    
+               
+    
+    
+    FIRMA SOLICITANTE                                                 FIRMA PERITO
+    
+        
+  `;
 
-  doc.text(lines, 20, 20);
+  const lines = doc.splitTextToSize(contenido, margenDerecho - 10); // Restar espacio para margen izquierdo
+
+  const lineHeight = 10; // Altura de línea
+  const x = 10; // Coordenada x para alineación izquierda
+  let y = 10; // Coordenada y inicial para la primera línea
+  
+  lines.forEach(line => {
+    doc.text(line, x, y);
+    y += lineHeight; // Aumentar la coordenada y para la siguiente línea
+  });
 
   // Guardar el PDF
   doc.save('solicitud_cremacion.pdf');

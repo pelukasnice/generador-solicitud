@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generar PDF</title>
+    <title>Generador solicitud cremacion</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
     <div class="container">
-      <h1>Crear Archivos PDF</h1>
+      <h1>Crear solicitud Cremacion</h1>
       <br>
       <form class="form">
         <label for="legajo">Legajo:</label>
@@ -20,11 +20,10 @@
         <input type="text" id="expediente" required><br>
   
         <label for="oficinaFiscal">Oficina Fiscal:</label>
-        <input type="text" id="oficinaFiscal" required><br>  
-          
-        <label for="hora">Hora:</label>
-        <input type="text" id="hora" required><br>
-  
+        <input type="text" id="oficinaFiscal" required><br> 
+
+          <h3>Datos del Solicitante</h3>
+        
         <label for="nombreSolicitante">Nombre del solicitante:</label>
         <input type="text" id="nombreSolicitante" required><br>
   
@@ -44,6 +43,8 @@
   
         <label for="parentesco">Parentesco:</label>
         <input type="text" id="parentesco" required><br>
+
+        <h3>Datos del Cadaver</h3>
   
         <label for="nombreCadaver">Nombre del cadáver:</label>
         <input type="text" id="nombreCadaver" required><br>
@@ -52,7 +53,12 @@
         <input type="text" id="nombreCrematorio" required><br>
   
         <label for="provincia">Provincia:</label>
-        <input type="text" id="provincia" required><br>
+        <select id="provincia" required>
+          <option value="Mendoza">  MENDOZA</option>
+          <option value="Cordoba">RUN</option>
+          <option value="San Juan">CEDULA</option>
+          <option value="San Luis">PASAPORTE</option>
+        </select><br>
   
         <label for="perito">Perito:</label>
         <input type="text" id="perito" required><br>

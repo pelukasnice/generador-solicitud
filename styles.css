@@ -18,7 +18,9 @@ h1 {
   color: #333;
   margin-top: 20px;
 }
-
+ h3{
+  text-align: center;
+ }
 /* Estilos para el formulario */
 .form {
   background-color: #fff;
@@ -35,6 +37,15 @@ h1 {
 }
 
 .form input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
