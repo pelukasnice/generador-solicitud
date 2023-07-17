@@ -12,61 +12,61 @@
     <div class="container">
       <h1>Crear solicitud Cremacion</h1>
       <br>
-      <form class="form">
+      <form class="form" onsubmit="event.preventDefault();">
         <label for="legajo">Legajo:</label>
         <input type="text" id="legajo" required><br>
-  
+
         <label for="expediente">Expediente:</label>
         <input type="text" id="expediente" required><br>
-  
+
         <label for="oficinaFiscal">Oficina Fiscal:</label>
         <input type="text" id="oficinaFiscal" required><br> 
 
-          <h3>Datos del Solicitante</h3>
+        <h3>Datos del Solicitante</h3>
         
         <label for="nombreSolicitante">Nombre del solicitante:</label>
         <input type="text" id="nombreSolicitante" required><br>
-  
+
         <label for="dniTipo">Tipo de documento:</label>
         <select id="dniTipo" required>
           <option value="DNI">DNI</option>
           <option value="RUN">RUN</option>
-          <option value="CEDULA">CEDULA</option>
           <option value="PASAPORTE">PASAPORTE</option>
+          <option value="OTRO">OTRO</option>          
         </select><br>
-  
+
         <label for="dni">Número de documento:</label>
         <input type="text" id="dni" required><br>
-  
+
         <label for="domicilio">Domicilio:</label>
         <input type="text" id="domicilio" required><br>
-  
+
         <label for="parentesco">Parentesco:</label>
         <input type="text" id="parentesco" required><br>
 
         <h3>Datos del Cadaver</h3>
-  
+
         <label for="nombreCadaver">Nombre del cadáver:</label>
         <input type="text" id="nombreCadaver" required><br>
-  
+
         <label for="nombreCrematorio">Nombre del crematorio:</label>
         <input type="text" id="nombreCrematorio" required><br>
-  
+
         <label for="provincia">Provincia:</label>
         <select id="provincia" required>
           <option value="Mendoza">  MENDOZA</option>
-          <option value="Cordoba">RUN</option>
-          <option value="San Juan">CEDULA</option>
-          <option value="San Luis">PASAPORTE</option>
+          <option value="Cordoba">CORDOBA</option>
+          <option value="San Juan">SAN JUAN</option>
+          <option value="San Luis">SAN LUIS</option>
         </select><br>
-  
+
         <label for="perito">Perito:</label>
         <input type="text" id="perito" required><br>
-  
+
         <label for="nombreCocheria">Nombre de la cochería:</label>
         <input type="text" id="nombreCocheria" required><br>
-  
-        <button type="button" onclick="generarPDF()">Generar PDF</button>
+
+        <button type="button" onclick="validarFormulario()">Generar PDF</button>
       </form>
     </div>
   
