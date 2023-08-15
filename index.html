@@ -6,70 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de solicitud </title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
 </head>
 <body>
-    <div class="container">
-      <h1>Crear solicitud </h1>
-      <br>
+    <div class="container">      
+      
       <form class="form" onsubmit="event.preventDefault();">
-        <label for="legajo">Legajo:</label>
-        <input type="text" id="legajo" required><br>
-
-        <label for="expediente">Expediente:</label>
-        <input type="text" id="expediente" required><br>
-
-        <label for="oficinaFiscal">Oficina Fiscal:</label>
-        <input type="text" id="oficinaFiscal" required><br> 
-
-        <h3>Datos del Solicitante</h3>
-        
-        <label for="nombreSolicitante">Nombre del solicitante:</label>
-        <input type="text" id="nombreSolicitante" required><br>
-
-        <label for="dniTipo">Tipo de documento:</label>
-        <select id="dniTipo" required>
-          <option value="DNI">DNI</option>
-          <option value="RUN">RUN</option>
-          <option value="PASAPORTE">PASAPORTE</option>
-          <option value="OTRO">OTRO</option>          
-        </select><br>
-
-        <label for="dni">Número de documento:</label>
-        <input type="text" id="dni" required><br>
-
-        <label for="domicilio">Domicilio:</label>
-        <input type="text" id="domicilio" required><br>
-
-        <label for="parentesco">Parentesco:</label>
-        <input type="text" id="parentesco" required><br>
-
-        <h3>Datos del Cadaver</h3>
-
-        <label for="nombreCadaver">Nombre del cadáver:</label>
-        <input type="text" id="nombreCadaver" required><br>
-
-        <label for="nombreCrematorio">Nombre del crematorio:</label>
-        <input type="text" id="nombreCrematorio" required><br>
-
-        <label for="provincia">Provincia:</label>
-        <select id="provincia" required>
-          <option value="Mendoza">  MENDOZA</option>
-          <option value="Cordoba">CORDOBA</option>
-          <option value="San Juan">SAN JUAN</option>
-          <option value="San Luis">SAN LUIS</option>
-        </select><br>
-
-        <label for="perito">Perito:</label>
-        <input type="text" id="perito" required><br>
-
-        <label for="nombreCocheria">Nombre de la cochería:</label>
-        <input type="text" id="nombreCocheria" required><br>
-
-        <button type="button" onclick="validarFormulario()">Generar PDF</button>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                        <h3>Cabecera</h3>
+                          <label for="legajo">Legajo:</label>
+                          <input type="text" id="legajo" class="form-control" required>
+                          
+                          <label for="expediente">Expediente:</label>
+                          <input type="text" id="expediente" class="form-control" required>
+                          
+                          <label for="oficinaFiscal">Oficina Fiscal:</label>
+                          <input type="text" id="oficinaFiscal" class="form-control" required>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h3>Datos del Solicitante</h3>
+                          
+                          <label for="nombreSolicitante">Nombre del solicitante:</label>
+                          <input type="text" id="nombreSolicitante" class="form-control" required>
+                          
+                          <label for="dniTipo">Tipo de documento:</label>
+                          <select id="dniTipo" class="form-control" required>
+                              <option value="DNI">DNI</option>
+                              <option value="RUN">RUN</option>
+                              <option value="PASAPORTE">PASAPORTE</option>
+                              <option value="OTRO">OTRO</option>
+                          </select>
+                          
+                          <label for="dni">Número de documento:</label>
+                          <input type="text" id="dni" class="form-control" required>
+                          
+                          <label for="domicilio">Domicilio:</label>
+                          <input type="text" id="domicilio" class="form-control" required>
+                          
+                          <label for="parentesco">Parentesco:</label>
+                          <input type="text" id="parentesco" class="form-control" required>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h3>Datos del Cadaver</h3>
+                          
+                          <label for="nombreCadaver">Nombre del cadáver:</label>
+                          <input type="text" id="nombreCadaver" class="form-control" required>
+                          
+                          <label for="nombreCrematorio">Nombre del crematorio:</label>
+                          <input type="text" id="nombreCrematorio" class="form-control" required>
+                          
+                          <label for="provincia">Provincia:</label>
+                          <select id="provincia" class="form-control" required>
+                              <option value="Mendoza">MENDOZA</option>
+                              <option value="Cordoba">CORDOBA</option>
+                              <option value="San Juan">SAN JUAN</option>
+                              <option value="San Luis">SAN LUIS</option>
+                          </select>
+                          
+                          <label for="perito">Perito:</label>
+                          <input type="text" id="perito" class="form-control" required>
+                          
+                          <label for="nombreCocheria">Nombre de la cochería:</label>
+                          <input type="text" id="nombreCocheria" class="form-control" required>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="row mt-3">
+              <div class="col-md-12">
+                  <button type="button" class="btn btn-primary" onclick="validarFormulario()">Generar PDF</button>
+              </div>
+          </div>
+      </div>
       </form>
     </div>
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/jspdf.min.js"></script>
   </body>

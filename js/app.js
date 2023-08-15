@@ -121,7 +121,7 @@ const generarPDF = (
 
   // Cargar la imagen
  const logoImg = new Image();
- logoImg.src = 'img/logo ministeriopublico.png'; 
+ logoImg.src = 'https://raw.githubusercontent.com/pelukasnice/generador-solicitud/master/img/logo%20ministeriopublico.png'; 
 
  // Esperar a que se cargue la imagen
  logoImg.onload = function() {
