@@ -55,20 +55,22 @@ h1 {
 }
 
 .form button {
+  margin: 0 auto;
   display: block;
-  width: 100%;
+  width: 50%;
   padding: 12px;
-  background-color: #4CAF50;
+  background-color: #7633fa;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 650;
   transition: background-color 0.3s ease;
 }
 
 .form button:hover {
-  background-color: #45a049;
+  background-color: #FA7633;
 }
 
 @media only screen and (max-width: 600px) {
