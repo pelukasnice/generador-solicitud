@@ -120,31 +120,33 @@ const generarPDF = (
   });
 
   // Cargar la imagen
- const logoImg = new Image();
- logoImg.src = 'img/logo ministeriopublico.png'; 
+  const logoImg = new Image();
+  logoImg.src = 'img/logo ministeriopublico.png';
 
- // Esperar a que se cargue la imagen
- logoImg.onload = function() {
- // Dimensiones y posición de la imagen
- const logoWidthCM = 70; // Ancho del logotipo en centímetros
- const logoHeightCM = 40; // Alto del logotipo en centímetros
+  // Esperar a que se cargue la imagen
+  logoImg.onload = function () {
+    // Dimensiones y posición de la imagen
+    const logoWidthCM = 70; // Ancho del logotipo en centímetros
+    const logoHeightCM = 40; // Alto del logotipo en centímetros
 
- // Conversión de centímetros a puntos
- const cmToPoints = 1; // Relación de conversión de centímetros a puntos
- const logoWidth = logoWidthCM * cmToPoints; // Ancho del logotipo en puntos
- const logoHeight = logoHeightCM * cmToPoints; // Alto del logotipo en puntos
+    // Conversión de centímetros a puntos
+    const cmToPoints = 1; // Relación de conversión de centímetros a puntos
+    const logoWidth = logoWidthCM * cmToPoints; // Ancho del logotipo en puntos
+    const logoHeight = logoHeightCM * cmToPoints; // Alto del logotipo en puntos
 
- // Dimensiones y posición de la imagen
- const logoX = (doc.internal.pageSize.width - logoWidth) / 2; // Centrar horizontalmente
- const logoY = 20; // Posición vertical en la página
+    // Dimensiones y posición de la imagen
+    const logoX = (doc.internal.pageSize.width - logoWidth) / 2; // Centrar horizontalmente
+    const logoY = 20; // Posición vertical en la página
 
- // Agregar la imagen al documento
- doc.addImage(logoImg, 'PNG', logoX, logoY, logoWidth, logoHeight);
+    // Agregar la imagen al documento
+    doc.addImage(logoImg, 'PNG', logoX, logoY, logoWidth, logoHeight);
 
-    // Guardar el PDF con el nombre del cadáver
-    const fileName = `${nombreCadaver}_cremacion.pdf`;
-    doc.save(fileName);
+    // Crear el PDF en un Blob y abrirlo en una nueva pestaña
+    const pdfBlob = doc.output('blob');
+    const pdfURL = URL.createObjectURL(pdfBlob);
+    window.open(pdfURL, '_blank');
   };
+
 };
 
 
